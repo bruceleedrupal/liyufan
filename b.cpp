@@ -4,10 +4,10 @@
 #include <iomanip>
 #include <algorithm>
 using namespace std;
-//liyufan test
+
 bool abc(int n)
 {
-    bool x=true;
+    bool x = true;
     if (n <= 1)
     {
         x = false;
@@ -19,7 +19,7 @@ bool abc(int n)
     else
     {
         for (int i = 2; i < n; i++)
-        {          
+        {
             if (n % i == 0)
             {
                 x = false;
@@ -30,23 +30,21 @@ bool abc(int n)
     return x;
 }
 
-
-
 int main()
 {
-    for(int i=100;i<1000;i++){
-        int temp=i;
-        while (temp)
+    int n;
+    cin >> n;
+    int x = -1;
+    for (int i = 2; i < n; i++)
+    {
+        if (abc(i))
         {
-            if(!(abc(temp))){
-                temp/=10;
+            cout << i << " ";
+            x++;
+            if (x % 5 == 4)
+            {
+                cout << endl;
             }
-            else{
-                break;
-            }
-        }
-        if(temp==0){
-            cout<<i<<endl;
         }
     }
     return 0;

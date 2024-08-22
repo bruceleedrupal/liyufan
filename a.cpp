@@ -1,64 +1,33 @@
 #include <iostream>
-#include <map>
-#include <vector>
-#include <iomanip>
-#include <algorithm>
 using namespace std;
-bool abc(int n)
-{
-    bool x=true;
-    if (n <= 1)
-    {
-        x = false;
-    }
-    else if (n == 2)
-    {
-        x = true;
-    }
-    else
-    {
-        for (int i = 2; i < n; i++)
-        {          
-            if (n % i == 0)
-            {
-                x = false;
-                break;
-            }
-        }
-    }
-    return x;
-}
-
-
-
 int main()
 {
-
-    
-    int z = 0;
-    for (int i = 100; i < 1000; i++)
+  int n, temp_i, reverse;
+  int count = 0;
+  cin >> n;
+  for (int i = 1; i <= n; i++)
+  {
+    temp_i = i;
+    reverse = 0;
+    while (temp_i)
     {
-        z = i;
-        
-        int m=1000;
+      reverse = 10 * reverse + temp_i % 10;
+      temp_i = temp_i / 10;
 
-        while (abc(z))
-        {
-            z%=m;
-            m/=10;
-        }
-
-
-
-        if(!m)
-            cout<<i<<endl;
+      if (reverse == i)
+      {
+        count++;
+      }
     }
-    return 0;
+  }
+  cout << count;
+  cout << endl;
 }
 
+
 /**
-* @runId: 33081
+* @runId: 32715
 * @language: C++
 * @author: 2024zzzx6
-* @submitTime: 2024-08-20 20:16:25
+* @submitTime: 2024-06-25 20:18:02
 */
