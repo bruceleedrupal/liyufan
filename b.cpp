@@ -33,19 +33,18 @@ bool abc(int n)
 int main()
 {
     int n;
-    cin >> n;
-    int x = -1;
-    for (int i = 2; i < n; i++)
-    {
-        if (abc(i))
-        {
-            cout << i << " ";
-            x++;
-            if (x % 5 == 4)
-            {
-                cout << endl;
-            }
+    cin>>n;
+    int x=0;
+    for(int i=1;i<=n/2;i++){
+        if(n%i==0){
+            x+=i;
         }
+    }
+    if(x==n){
+        cout<<"yes";
+    }
+    else{
+        cout<<"no";
     }
     return 0;
 }
