@@ -14,7 +14,7 @@ int abc(int n){
 }
 int main()
 {
-    int n;
+    long long n;
     cin>>n;
     cout<<abc(n);
 
