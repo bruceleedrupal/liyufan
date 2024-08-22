@@ -3,19 +3,22 @@ using namespace std;
 int main()
 {
   int i=0;
+  int x=0;
   int z=1;
-  int sum=0;
-  while (1)
+  while (x==0)
   {
-    z+=i;
-    // cout<<z<<" ";
-    sum+=z;
     i++;
-    if(sum>=5000){
-      break;
-    }
+    x+=i;
+    
+
   }
-  // cout<<endl;
-  cout<<sum;
   
 }
+
+
+/**
+* @runId: 32715
+* @language: C++
+* @author: 2024zzzx6
+* @submitTime: 2024-06-25 20:18:02
+*/

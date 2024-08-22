@@ -4,19 +4,39 @@
 #include <iomanip>
 #include <algorithm>
 using namespace std;
-int abc(int n){
+int fenzi(int n){
     if(n==1||n==2){
         return 1;
     }
     else{
-        return abc(n-1)+abc(n-2);
+        return fenzi(n-1)+fenzi(n-2);
     }
 }
+
+int fenmu(int n){
+    if(n==1){
+        return 1;
+    }
+    else if(n==2){
+        return 2;
+    }
+    else{
+        return fenmu(n-1)+fenmu(n-2);
+    }
+}
+
+
 int main()
 {
-    long long n;
+    int n;
     cin>>n;
-    cout<<abc(n);
+
+    double  x=0;
+    for(int i=1;i<=n;i++){
+        x+=(double)fenzi(i)/fenmu(i);
+    }
+    
+    cout<<fixed<<setprecision(3)<<x;
 
     return 0;
 }
