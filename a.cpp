@@ -1,6 +1,6 @@
 #include <iostream>
 using namespace std;
-int gcd(int a, int b)
+long long gcd(long long a, long long b)
 {
   if (b == 0)
   {
@@ -11,14 +11,14 @@ int gcd(int a, int b)
 
 int main()
 {
-  int m, n;
+  long long m, n;
   cin >> m >> n;
 
-  int x = gcd(m, n);
+  long long greatest_common_divisor = gcd(m, n);
 
-  int a = m / x;
-  int b = n / x;
-  cout << x << endl;
+  long long max_side_length_m = m / greatest_common_divisor;
+  long long max_side_length_n = n / greatest_common_divisor;
+  cout << greatest_common_divisor << endl;
 
   return 0;
 }

@@ -6,12 +6,23 @@
 using namespace std;
 int main()
 {
-    int n;
-    cin>>n;
-    int x=0;
-    for(int i=1;i<=n;i++){
-        x+=i*i;
+    int n,m;
+    cin>>n>>m;
+    if(n>m){
+    for(int i=n;i>=1;i--){
+        if(n%i==0&&m%i==0){
+            cout<<i;
+            break;
+        }
     }
-    cout<<x;
+    }
+    else{
+        for(int i=m;i>=1;i--){
+        if(n%i==0&&m%i==0){
+            cout<<i;
+            break;
+        }
+    }
+    }
     return 0;
 }
